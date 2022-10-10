@@ -5,8 +5,8 @@ clean: venv
 	source .venv/bin/activate; python setup.py clean --all
 	find build ! -name '.gitkeep' -type f -exec rm -f {} +
 	find dist ! -name '.gitkeep' -type f -exec rm -f {} +
-	rm -r src/snes_scrub/__pycache__
-	rm -r snes_scrub.egg-info
+	-rm -r src/snes_scrub/__pycache__
+	-rm -r src/snes_scrub.egg-info
 
 install-dev:
 	python3 -m pip install -e .
