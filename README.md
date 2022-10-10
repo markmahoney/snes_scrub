@@ -1,17 +1,37 @@
 # SNES Scrub
 
-Are you sitting on a bunch of old SNES ROMs with weird DOS filenames and dubious headers? Do you lie awake a night, haunted by the memories of those you've wronged? This tool can help with one of those things.
+Are you sitting on a bunch of old DOS-era SNES ROMs with weird, abbreviated filenames and dubious extra bytes? Does the fact that you're the kind of person who would still have DOS-era SNES ROMs in your possession haunt you on sleepless nights? This tool can help you with one of those things.
 
-`snes_scrub` searches the current directory for any files with `.sfc`, `.smc`, or `.swc` extensions, and uses their SHA1 hash to try to find a matching entry in the no-intro.org SNES dataset. It will also try and hash the file minus the first 512 bytes, in case the ROM has had a SMC header prepended. All matching files are copied to a subdirectory (`scrubbed` by default), renamed using the no-intro.org filenames and stripped of their old SMC headers, if they had any.
+`snes_scrub` searches the input directory (the current directory by default) for files with `.sfc`, `.smc`, or `.swc` extensions, and compares their SHA1 hashes to the no-intro.org SNES dataset. It will also try and hash the file minus the first 512 bytes, in case the ROM has a vestigial SMC header prepended. Any matching no-intro files are copied to a output directory (`./scrubbed` by default), renamed using the no-intro.org filenames and stripped of their old SMC headers, if they had any.
 
 ## Installation
 
-Linux/macOS
+TODO: will upload to PyPI soon!
+
+## Example usage
+
+From any directory with SNES ROMs, simply run `snes_scrub` and any ROM files in that directory will be processed and stored in a subdirectory called `scrubbed`.
+
+If you want to use different input/output directories:
 
 ```sh
-python3 -m pip install snes_scrub
+snes_scrub --input /example/rom/directory --output ./clean
 ```
+
+will read files from the `/example/rom/directory` directory and put cleaned files in a `clean` subdirectory off your current working directory.
+
+`snes_scrub --help` gives detailed usage info.
 
 ## Build
 
-TODO
+Theoretically, on Linux/MacOS:
+
+```sh
+make build
+```
+
+If that succeeds, you can install directly from the local wheel file using:
+
+```sh
+python3 -m pip install dist/snes_scrub-0.1.0-py3-none-any.whl
+```
