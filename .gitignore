@@ -1,0 +1,8 @@
+**/.DS_Store
+.venv
+src/*.egg-info
+src/**/__pycache__
+build/**
+dist/**
+!build/.gitkeep
+!dist/.gitkeep
