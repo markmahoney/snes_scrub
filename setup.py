@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name = 'snes_scrub',
-    version = '0.1.0',
+    version = '0.1.1',
     url = 'https://github.com/markmahoney/snes_scrub',
     author = 'Mark Mahoney',
     author_email = 'bcmark@gmail.com',

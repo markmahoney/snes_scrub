@@ -6,7 +6,11 @@ Are you sitting on a bunch of old DOS-era SNES ROMs with weird, abbreviated file
 
 ## Installation
 
-TODO: will upload to PyPI soon!
+You have to have Python 3 installed. If that's good, then:
+
+```
+python3 -m pip install snes_scrub
+```
 
 ## Example usage
 
@@ -14,7 +18,7 @@ From any directory with SNES ROMs, simply run `snes_scrub` and any ROM files in 
 
 If you want to use different input/output directories:
 
-```sh
+```
 snes_scrub --input /example/rom/directory --output ./clean
 ```
 
@@ -26,12 +30,12 @@ will read files from the `/example/rom/directory` directory and put cleaned file
 
 Theoretically, on Linux/MacOS:
 
-```sh
+```
 make build
 ```
 
 If that succeeds, you can install directly from the local wheel file using:
 
-```sh
+```
 python3 -m pip install dist/snes_scrub-0.1.0-py3-none-any.whl
 ```

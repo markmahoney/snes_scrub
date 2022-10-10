@@ -8,6 +8,9 @@ clean: venv
 	-rm -r src/snes_scrub/__pycache__
 	-rm -r src/snes_scrub.egg-info
 
+release: venv build
+	source .venv/bin/activate; twine upload dist/*
+
 install-dev:
 	python3 -m pip install -e .
 
